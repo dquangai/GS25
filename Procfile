@@ -1,1 +1,1 @@
-web: gunicorn ToolPy.Luong:app
+web: gunicorn Luong:app
