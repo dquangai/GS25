@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bảng Công & Lương</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+  <h2>📋 Bảng Công từ {{start}} đến {{end}}</h2>
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>Ngày</th>
+        <th>Ca</th>
+        <th>Loại</th>
+        <th>Giờ</th>
+        <th>Lương</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in data %}
+      <tr>
+        <td>{{ r.date }}</td>
+        <td>{{ r.shift }}</td>
+        <td>{{ r.type }}</td>
+        <td>{{ r.hours }}</td>
+        <td>{{ r.salary }} VND</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h4 class="mt-4">🧲 Tổng kết</h4>
+  <ul>
+    <li>Tổng số giờ: <strong>{{ total_hours }}</strong></li>
+    <li>Lương chính: <strong>{{ main_salary }}</strong> VND</li>
+    <li>Trợ cấp gửi xe: <strong>{{ parking }}</strong> VND</li>
+    <li><b>Tổng thu nhập:</b> <strong class="text-success">{{ total_salary }} VND</strong></li>
+  </ul>
+  <a href="/" class="btn btn-secondary">← Nhập tiếp</a>
+</body>
+</html>
